@@ -19,6 +19,5 @@ remove_unused_original_minimum_age_seconds=<%= @remove_unused_original_minimum_a
 # Write a checksum for files in _base to disk (default: false)
 checksum_base_images=<%= @checksum_base_images %>
 <% if node["nova"]["libvirt"]["disk_cachemodes"].any? %>
-# ["file=directsync","block=none"] (list value)
-disk_cachemodes=["<%= node["nova"]["libvirt"]["disk_cachemodes"].join('","') %>"]
+disk_cachemodes="<%= node["nova"]["libvirt"]["disk_cachemodes"] %>
 <% end -%>
